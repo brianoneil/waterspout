@@ -8,7 +8,7 @@ function computeCurvedArc(width: number, height: number): ICurvedArc {
   const phi = Math.atan2(x, y);
   const radius = w / 2 / Math.cos(phi);
   const centerX = width / 2;
-  const centerY = -Math.sqrt(Math.max(radius * radius - x * x, 0));
+  const centerY = radius;
   const startAngle = Math.atan2(0 - centerY, 0 - centerX);
   const endAngle = Math.atan2(0 - centerY, width - centerX);
   return {

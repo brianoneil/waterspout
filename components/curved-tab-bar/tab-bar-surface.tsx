@@ -25,38 +25,38 @@ const TabBarSurface: React.FC<ITabBarSurface> = ({
           {beads.map((b, i) => (
             <GlassView
               key={i}
-              glassEffectStyle="systemChromeMaterial"
+              glassEffectStyle="regular"
               style={[
                 styles.bead,
                 {
-                  left: b.x - THICKNESS / 2,
-                  top: b.y - THICKNESS / 2,
+                  left: b.x,
+                  top: b.y,
                 },
               ]}
             />
           ))}
         </GlassContainer>
       )}
-      {!glass && (
-        <Svg
-          style={StyleSheet.absoluteFill}
-          width={width}
-          height={barHeight + THICKNESS}
-        >
-          <Path
-            d={path}
-            transform={transform}
-            fill={TAB_BAR_COLORS.surface}
-          />
-          <Path
-            d={path}
-            transform={transform}
-            fill="none"
-            stroke="rgba(0,0,0,0.05)"
-            strokeWidth={1}
-          />
-        </Svg>
-      )}
+      <Svg
+        pointerEvents="none"
+        style={StyleSheet.absoluteFill}
+        width={width}
+        height={barHeight}
+        opacity={glass ? 0.52 : 0.94}
+      >
+        <Path
+          d={path}
+          transform={transform}
+          fill={TAB_BAR_COLORS.surface}
+        />
+        <Path
+          d={path}
+          transform={transform}
+          fill="none"
+          stroke="rgba(0,0,0,0.05)"
+          strokeWidth={1}
+        />
+      </Svg>
     </>
   );
 };
