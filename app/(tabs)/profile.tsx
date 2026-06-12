@@ -13,7 +13,7 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
+  container: { flex: 1, backgroundColor: "#F2F2F7" },
   content: { flex: 1, alignItems: "center", justifyContent: "center", gap: 8 },
   title: { fontSize: 32, fontWeight: "700" },
   subtitle: { fontSize: 16, color: "#666" },
